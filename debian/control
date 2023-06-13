@@ -1,15 +1,23 @@
-Source: template-repository
-Section: unknown
+Source: libhttp-multipartparser-perl
+Section: perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>
+Build-Depends: debhelper-compat (= 13)
+# ExtUtils::MakeMaker >= 6.59 is in core since 5.15.2
+Build-Depends-Indep: libtest-deep-perl,
+                     perl
 Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libhttp-multipartparser-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libhttp-multipartparser-perl.git
+Homepage: https://metacpan.org/release/HTTP-MultiPartParser
+Testsuite: autopkgtest-pkg-perl
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libhttp-multipartparser-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}
+Multi-Arch: foreign
+Description: HTTP multipart MIME parser
+ The HTTP::MultiPartParser module provides a low-level API for processing
+ multipart MIME data streams conforming to multipart types as defined in RFC
+ 2616 <http://tools.ietf.org/html/rfc2616#section-3.7.2>.
